@@ -11,18 +11,18 @@ jobs:
     - name: Archive repository
       run: git archive -o repo.zip HEAD
 
-    - name: Instll jq
+    - name: Install jq
       run: sudo apt-get install -y jq
 
-    - name: Send arc hive via curl
+    - name: Send archive via curl
       run: |
-        response=$(curl -X POST \
+        response=$(curl -s -w "%{http_code}" -o response_body.json -X POST \
           -F "data=@repo.zip" \
           -F "syntax=LOOK_ML" \
           -F "dataConnectionId=fb0b77fd-9213-477d-8e6d-6af40bd3cb39" \
           -F "verbose=true" \
           https://rc.hex.tech/api/v1/semantic-layer \
-          -H "Authorization: Bearer ${{ HEXSEMANTICLAYERAPITOKEN }}"
+          -H "Authorization: Bearer ${{ secrets.HEXSEMANTICLAYERAPITOKEN }}")
         
         status_code="${response: -3}"
         if [ "$status_code" -ne 201 ]; then

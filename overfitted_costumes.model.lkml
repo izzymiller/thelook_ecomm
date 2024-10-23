@@ -4,13 +4,7 @@ connection: "Overfitted Costumes"
 include: "*.view"
 
 
-explore: inventory_items {
-  join: products {
-    type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-}
+explore: inventory_items {}
 
 explore: order_items {
   join: inventory_items {
@@ -27,7 +21,7 @@ explore: order_items {
 
   join: customers {
     type: left_outer
-    sql_on: ${orders.user_id} = ${customers.id} ;;
+    sql_on: ${orders.user_id} = ${customers.user_id} ;;
     relationship: many_to_one
   }
 }
@@ -35,7 +29,7 @@ explore: order_items {
 explore: orders {
   join: customers {
     type: left_outer
-    sql_on: ${orders.user_id} = ${customers.id} ;;
+    sql_on: ${orders.user_id} = ${customers.user_id} ;;
     relationship: many_to_one
   }
 }

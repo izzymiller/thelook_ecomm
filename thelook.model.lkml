@@ -1,4 +1,4 @@
-connection: "thelook"
+connection: "Overfitted Costumes"
 
 # include all the views
 include: "*.view"

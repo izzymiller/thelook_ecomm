@@ -1,8 +1,8 @@
-view: users {
+view: customers {
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.user_id ;;
   }
 
   dimension: age {
@@ -56,12 +56,12 @@ view: users {
 
   dimension: lat {
     type: number
-    sql: ${TABLE}.lat ;;
+    sql: ${TABLE}.latitude ;;
   }
 
   dimension: lng {
     type: number
-    sql: ${TABLE}.lng ;;
+    sql: ${TABLE}.longitude ;;
   }
 
   dimension: postcode {
@@ -71,7 +71,7 @@ view: users {
 
   dimension: zipcode {
     type: zipcode
-    sql: ${TABLE}.postcode ;;
+    sql: ${TABLE}.postal_code ;;
   }
 
   dimension: state {

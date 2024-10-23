@@ -25,27 +25,19 @@ explore: order_items {
     relationship: many_to_one
   }
 
-  join: products {
+  join: customers {
     type: left_outer
-    sql_on: ${inventory_items.product_id} = ${products.id} ;;
-    relationship: many_to_one
-  }
-
-  join: users {
-    type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
+    sql_on: ${orders.user_id} = ${customers.id} ;;
     relationship: many_to_one
   }
 }
 
 explore: orders {
-  join: users {
+  join: customers {
     type: left_outer
-    sql_on: ${orders.user_id} = ${users.id} ;;
+    sql_on: ${orders.user_id} = ${customers.id} ;;
     relationship: many_to_one
   }
 }
 
-explore: products {}
-
-explore: users {}
+explore: customers {}

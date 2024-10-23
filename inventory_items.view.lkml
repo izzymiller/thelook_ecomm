@@ -44,6 +44,36 @@ view: inventory_items {
     sql: ${TABLE}.sold_at ;;
   }
 
+    dimension: brand {
+    type: string
+    sql: ${TABLE}.product_brand ;;
+  }
+
+  dimension: category {
+    type: string
+    sql: ${TABLE}.product_category ;;
+  }
+
+  dimension: department {
+    type: string
+    sql: ${TABLE}.product_department ;;
+  }
+
+  dimension: item_name {
+    type: string
+    sql: ${TABLE}.product_name ;;
+  }
+
+  dimension: retail_price {
+    type: number
+    sql: ${TABLE}.product_retail_price ;;
+  }
+
+  dimension: sku {
+    type: string
+    sql: ${TABLE}.sku ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, products.item_name, products.id, order_items.count]

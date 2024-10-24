@@ -60,15 +60,6 @@ view: orders {
     sql: ${total_amount_of_order_usd} - ${total_cost_of_order} ;;
   }
 
-  dimension: order_sequence_number {
-    type: number
-    sql:
-      (SELECT COUNT(*)
-      FROM orders o
-      WHERE o.id < ${TABLE}.id
-      AND o.user_id = ${TABLE}.user_id) + 1
-      ;;
-  }
 
   dimension: is_first_purchase {
     type: yesno

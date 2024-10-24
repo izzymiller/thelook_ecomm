@@ -7,11 +7,6 @@ include: "*.view"
 explore: inventory_items {}
 
 explore: order_items {
-  join: customers {
-    type: left_outer
-    sql_on: ${order_items.user_id} = ${customers.id} ;;
-    relationship: many_to_one
-  }
 
   join: inventory_items {
     type: left_outer
@@ -24,8 +19,6 @@ explore: order_items {
     sql_on: ${order_items.order_id} = ${orders.id} ;;
     relationship: many_to_one
   }
-
-  
 }
 
 explore: orders {

@@ -86,6 +86,6 @@ view: customers {
 
   measure: count {
     type: count
-    drill_fields: [id, last_name, first_name, orders.count]
+    drill_fields: [last_name, first_name]
   }
 }

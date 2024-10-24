@@ -1,5 +1,5 @@
 view: customers {
-  dimension: id {
+  dimension: user_id {
     primary_key: yes
     type: number
     sql: ${TABLE}.user_id ;;

@@ -21,7 +21,7 @@ explore: order_items {
 
   join: customers {
     type: left_outer
-    sql_on: ${orders.USER_ID} = ${customers.user_id} ;;
+    sql_on: ${orders.user_id} = ${customers.id} ;;
     relationship: many_to_one
   }
 }
@@ -29,7 +29,7 @@ explore: order_items {
 explore: orders {
   join: customers {
     type: left_outer
-    sql_on: ${orders.user_id} = ${customers.user_id} ;;
+    sql_on: ${orders.user_id} = ${customers.id} ;;
     relationship: many_to_one
   }
 }

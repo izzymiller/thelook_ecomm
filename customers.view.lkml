@@ -1,13 +1,14 @@
 view: customers {
-  dimension: id {
-    primary_key: yes
-    type: number
-    sql: ${TABLE}.user_id ;;
-  }
+
 
   dimension: age {
     type: number
     sql: ${TABLE}.age ;;
+  }
+
+  dimension: id {
+    type: number
+    sql: ${TABLE}.user_id ;;
   }
 
   dimension: city {

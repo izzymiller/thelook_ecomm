@@ -5,6 +5,11 @@ view: inventory_items {
     sql: ${TABLE}.id ;;
   }
 
+  dimension: inventory_item_id {
+    type: number
+    sql: ${TABLE}.id ;;
+  }
+
   dimension: cost {
     type: number
     sql: ${TABLE}.cost ;;

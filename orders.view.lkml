@@ -61,23 +61,15 @@ view: orders {
   }
 
 
-  dimension: is_first_purchase {
-    type: yesno
-    sql: ${order_sequence_number} = 1 ;;
-  }
-
   measure: count {
     type: count
-    drill_fields: [id, users.last_name, users.first_name, users.id, order_items.count]
+    drill_fields: [id, customers.last_name, customers.first_name, customers.id, order_items.count]
   }
 
   measure: first_purchase_count {
     type: count
-    drill_fields: [id, created_time, users.name, users.history, total_cost_of_order]
-    filters: {
-      field: is_first_purchase
-      value: "Yes"
-    }
+    drill_fields: [id, created_time, customers.name, customers.history, total_cost_of_order]
+
   }
 
   measure: average_order_profit {

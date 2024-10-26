@@ -2,7 +2,7 @@ view: orders {
   dimension: id {
     primary_key: yes
     type: number
-    sql: ${TABLE}.id ;;
+    sql: ${TABLE}.order_id ;;
   }
 
   dimension_group: created {
@@ -68,7 +68,7 @@ view: orders {
 
   measure: first_purchase_count {
     type: count
-    drill_fields: [id, created_time, customers.name, customers.history, total_cost_of_order]
+    drill_fields: [id, created_time, customers.name, total_cost_of_order]
 
   }
 

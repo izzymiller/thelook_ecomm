@@ -7,7 +7,7 @@ include: "*.view"
 explore: inventory_items {}
 
 explore: order_items {
-  description: "Main base explore for looking at orders and order details"
+  description: "Main ba se explore for looking at orders and order details"
 
   join: inventory_items {
     type: left_outer

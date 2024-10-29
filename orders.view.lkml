@@ -31,7 +31,7 @@ view: orders {
 
   dimension: user_id {
     type: number
-    # hidden: yes
+    # hidden: ys
     sql: ${TABLE}.user_id ;;
   }
 

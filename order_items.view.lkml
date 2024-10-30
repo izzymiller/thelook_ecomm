@@ -48,7 +48,13 @@ view: order_items {
   dimension: sale_price {
     type: number
     value_format_name: decimal_2
-    sql: ${TABLE}.sale_price ;;
+    sql: ${TABLE}.sale_price  ;;
+  }
+
+  dimension: profit {
+    type: number
+    value_format_name: decimal_2
+    sql: ${TABLE}.sale_price  - 10 ;;
   }
 
   measure: count {
